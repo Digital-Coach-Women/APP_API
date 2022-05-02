@@ -82,7 +82,7 @@ namespace Coaching.API.Controllers
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType(typeof(DefaultResponse<LevelResponse>), StatusCodes.Status200OK)]
-        public IActionResult Put(int id, [FromForm] LevelRequest model)
+        public IActionResult Put(int id, [FromBody] LevelRequest model)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace Coaching.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(DefaultResponse<LevelResponse>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Post([FromForm] LevelRequest model)
+        public async Task<IActionResult> Post([FromBody] LevelRequest model)
         {
             try
             {

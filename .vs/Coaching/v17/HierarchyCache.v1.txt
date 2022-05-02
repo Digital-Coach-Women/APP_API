@@ -1,0 +1,240 @@
+﻿++Solución "Coaching" ‎(4 de 4 proyectos)
+i:{00000000-0000-0000-0000-000000000000}:Coaching.sln
+++Coaching.API
+i:{00000000-0000-0000-0000-000000000000}:Coaching.API
+++Connected Services 
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>588
+++Dependencias
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>587
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:>449
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:>451
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:>450
+++Properties
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\properties\
+++Controllers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\
+++AuthController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\authcontroller.cs
+++BaseController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\basecontroller.cs
+++CertificateController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\certificatecontroller.cs
+++CourseController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\coursecontroller.cs
+++LevelController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\levelcontroller.cs
+++SpecialityController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\specialitycontroller.cs
+++WeatherForecastController.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\controllers\weatherforecastcontroller.cs
+++appsettings.json
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\appsettings.json
+++Program.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\program.cs
+++Resource.resx
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\resource.resx
+++Startup.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\startup.cs
+++WeatherForecast.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\weatherforecast.cs
+++No se detectaron dependencias de servicio
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>589
+++Analizadores
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:analizadores
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:analizadores
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:analizadores
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:analizadores
+++Marcos de trabajo
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:marcos de trabajo
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:marcos de trabajo
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:marcos de trabajo
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:marcos de trabajo
+++Paquetes
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:paquetes
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:paquetes
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:paquetes
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:paquetes
+++Proyectos
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:proyectos
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:proyectos
+++launchSettings.json
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\properties\launchsettings.json
+++appsettings.Development.json
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\appsettings.development.json
+++Resource.Designer.cs
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\resource.designer.cs
+++Microsoft.AspNetCore.Analyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\users\marco\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.4\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:c:\users\marco\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.4\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:c:\users\marco\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.4\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:c:\users\marco\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:c:\users\marco\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.api\microsoft.netcore.app
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\microsoft.netcore.app
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\microsoft.netcore.app
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\microsoft.netcore.app
+++Microsoft.EntityFrameworkCore (6.0.4)
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>642
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:>616
+++Microsoft.EntityFrameworkCore.Design (6.0.4)
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>644
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:>620
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.4)
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>643
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:>619
+++Microsoft.EntityFrameworkCore.Tools (6.0.4)
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>646
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:>621
+++Swashbuckle.AspNetCore (6.2.3)
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:>645
+++Coaching.Core
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\bin\debug\net6.0\coaching.core.dll
+i:{00000000-0000-0000-0000-000000000000}:Coaching.Core
+++Coaching.Data.Core
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\bin\debug\net6.0\coaching.data.core.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\bin\debug\net6.0\coaching.data.core.dll
+i:{00000000-0000-0000-0000-000000000000}:Coaching.Data.Core
+++Coaching.Helper
+i:{6ab5e52b-1329-4fe5-8438-7b3d696bba7e}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\bin\debug\net6.0\coaching.helper.dll
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\bin\debug\net6.0\coaching.helper.dll
+i:{00000000-0000-0000-0000-000000000000}:Coaching.Helper
+++DTO
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\
+++Request
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\
+++BaseGetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\basegetrequest.cs
+++CertificateGetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\certificategetrequest.cs
+++CertificateRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\certificaterequest.cs
+++CourseGetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\coursegetrequest.cs
+++CourseRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\courserequest.cs
+++ForgetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\forgetrequest.cs
+++LevelGetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\levelgetrequest.cs
+++LevelRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\levelrequest.cs
+++LoginRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\loginrequest.cs
+++RegisterRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\registerrequest.cs
+++ResetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\resetrequest.cs
+++SpecialityGetRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\specialitygetrequest.cs
+++SpecialityRequest.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\request\specialityrequest.cs
+++Response
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\
+++CertificateResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\certificateresponse.cs
+++CollectionResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\collectionresponse.cs
+++CourseResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\courseresponse.cs
+++DefaultResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\defaultresponse.cs
+++LevelResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\levelresponse.cs
+++LinkResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\linkresponse.cs
+++SpecialityResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\specialityresponse.cs
+++UserResponse.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\dto\response\userresponse.cs
+++Helpers
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\helpers\
+++ServiceHelper.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\helpers\servicehelper.cs
+++Class1.cs
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.core\class1.cs
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\class1.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\class1.cs
+++Microsoft.AspNetCore.Mvc.Core (2.2.5)
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:>615
+++X.PagedList (8.4.0)
+i:{ddae5df2-2faf-462c-9665-506c7bff6315}:>618
+++ConstantHelpers.cs
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\constanthelpers.cs
+++EmailHelper.cs
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\emailhelper.cs
+++SecurityHelper.cs
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\securityhelper.cs
+++TokenHelper.cs
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.helper\tokenhelper.cs
+++System.IdentityModel.Tokens.Jwt (6.17.0)
+i:{5b2a44ed-6b83-4480-b534-cbbb81c2900d}:>617
+++Coaching
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\
+++Entities
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\
+++CoachingContext.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\coachingcontext.cs
+++Admin.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\admin.cs
+++Chat.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\chat.cs
+++ChatBot.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\chatbot.cs
+++ChatBotSession.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\chatbotsession.cs
+++ChatSession.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\chatsession.cs
+++Course.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\course.cs
+++EspecialityLevelCup.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\especialitylevelcup.cs
+++NotificationUser.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\notificationuser.cs
+++Speciality.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\speciality.cs
+++SpecialityLevel.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\specialitylevel.cs
+++SpecialityLevelCertificate.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\specialitylevelcertificate.cs
+++SuccessStoires.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\successstoires.cs
+++User.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\user.cs
+++UserCourse.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\usercourse.cs
+++UserSpecialityLevel.cs
+i:{94e5440d-f8c1-460a-8a12-22a475710d39}:d:\school\upc 2022-1\tdp\proyecto_2_actual\api\coaching\coaching.data.core\coaching\entities\userspecialitylevel.cs

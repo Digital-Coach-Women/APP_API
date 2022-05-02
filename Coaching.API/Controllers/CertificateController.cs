@@ -80,7 +80,7 @@ namespace Coaching.API.Controllers
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType(typeof(DefaultResponse<CertificateResponse>), StatusCodes.Status200OK)]
-        public IActionResult Put(int id, [FromForm] CertificateRequest model)
+        public IActionResult Put(int id, [FromBody] CertificateRequest model)
         {
             try
             {
@@ -115,7 +115,7 @@ namespace Coaching.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(DefaultResponse<CertificateResponse>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Post([FromForm] CertificateRequest model)
+        public async Task<IActionResult> Post([FromBody] CertificateRequest model)
         {
             try
             {
