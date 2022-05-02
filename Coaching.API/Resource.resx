@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="forgetEmail" xml:space="preserve">
+    <value>&lt;!doctype html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"&gt;
+
+&lt;head&gt;
+  &lt;!-- NAME: 1 COLUMN --&gt;
+  &lt;!--[if gte mso 15]&gt;
+      &lt;xml&gt;
+        &lt;o:OfficeDocumentSettings&gt;
+          &lt;o:AllowPNG/&gt;
+          &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        &lt;/o:OfficeDocumentSettings&gt;
+      &lt;/xml&gt;
+    &lt;![endif]--&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Reset Your Lingo Password&lt;/title&gt;
+  &lt;!--[if !mso]&gt;
+      &lt;!-- --&gt;
+  &lt;link href='https://fonts.googleapis.com/css?family=Asap:400,400italic,700,700italic' rel='stylesheet' type='text/css'&gt;
+  &lt;!--&lt;![endif]--&gt;
+  &lt;style type="text/css"&gt;
+    @media only screen and (min-width:768px){
+          .templateContainer{
+              width:600px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          body,table,td,p,a,li,blockquote{
+              -webkit-text-size-adjust:none !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          body{
+              width:100% !important;
+              min-width:100% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          #bodyCell{
+              padding-top:10px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImage{
+              width:100% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+         
+   .mcnCaptionTopContent,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer{
+              max-width:100% !important;
+              width:100% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnBoxedTextContentContainer{
+              min-width:100% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImageGroupContent{
+              padding:9px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnCaptionLeftContentOuter
+   .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
+              padding-top:9px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImageCardTopImageContent,.mcnCaptionBlockInner
+   .mcnCaptionTopContent:last-child .mcnTextContent{
+              padding-top:18px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImageCardBottomImageContent{
+              padding-bottom:9px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImageGroupBlockInner{
+              padding-top:0 !important;
+              padding-bottom:0 !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImageGroupBlockOuter{
+              padding-top:9px !important;
+              padding-bottom:9px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnTextContent,.mcnBoxedTextContentColumn{
+              padding-right:18px !important;
+              padding-left:18px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+              padding-right:18px !important;
+              padding-bottom:0 !important;
+              padding-left:18px !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+          .mcpreview-image-uploader{
+              display:none !important;
+              width:100% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 1
+      @tip Make the first-level headings larger in size for better readability
+   on small screens.
+      */
+          h1{
+              /*@editable*/font-size:20px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 2
+      @tip Make the second-level headings larger in size for better
+   readability on small screens.
+      */
+          h2{
+              /*@editable*/font-size:20px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 3
+      @tip Make the third-level headings larger in size for better readability
+   on small screens.
+      */
+          h3{
+              /*@editable*/font-size:18px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 4
+      @tip Make the fourth-level headings larger in size for better
+   readability on small screens.
+      */
+          h4{
+              /*@editable*/font-size:16px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Boxed Text
+      @tip Make the boxed text larger in size for better readability on small
+   screens. We recommend a font size of at least 16px.
+      */
+          .mcnBoxedTextContentContainer
+   .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
+              /*@editable*/font-size:16px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Preheader Visibility
+      @tip Set the visibility of the email's preheader on small screens. You
+   can hide it to save space.
+      */
+          #templatePreheader{
+              /*@editable*/display:block !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Preheader Text
+      @tip Make the preheader text larger in size for better readability on
+   small screens.
+      */
+          #templatePreheader .mcnTextContent,#templatePreheader
+   .mcnTextContent p{
+              /*@editable*/font-size:12px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Header Text
+      @tip Make the header text larger in size for better readability on small
+   screens.
+      */
+          #templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+              /*@editable*/font-size:16px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Body Text
+      @tip Make the body text larger in size for better readability on small
+   screens. We recommend a font size of at least 16px.
+      */
+          #templateBody .mcnTextContent,#templateBody .mcnTextContent p{
+              /*@editable*/font-size:16px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }   @media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Footer Text
+      @tip Make the footer content text larger in size for better readability
+   on small screens.
+      */
+          #templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+              /*@editable*/font-size:12px !important;
+              /*@editable*/line-height:150% !important;
+          }
+  
+  }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ background-color: #c8b6ff; height: 100%; margin: 0; padding: 0; width: 100%"&gt;
+  &lt;center&gt;
+    &lt;table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" id="bodyTable" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+ 100%; background-color: #c8b6ff; height: 100%; margin: 0; padding: 0; width:
+ 100%" width="100%"&gt;
+      &lt;tr&gt;
+        &lt;td align="center" id="bodyCell" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-top: 0;
+ height: 100%; margin: 0; padding: 0; width: 100%" valign="top"&gt;
+          &lt;!-- BEGIN TEMPLATE // --&gt;
+          &lt;!--[if gte mso 9]&gt;
+              &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;"&gt;
+                &lt;tr&gt;
+                  &lt;td align="center" valign="top" width="600" style="width:600px;"&gt;
+                  &lt;![endif]--&gt;
+          &lt;table border="0" cellpadding="0" cellspacing="0" class="templateContainer" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width:
+ 600px; border: 0" width="100%"&gt;
+            &lt;tr&gt;
+              &lt;td id="templatePreheader" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #c8b6ff;
+ border-top: 0; border-bottom: 0; padding-top: 16px; padding-bottom: 8px" valign="top"&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td id="templateHeader" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #f7f7ff;
+ border-top: 0; border-bottom: 0; padding-top: 16px; padding-bottom: 0" valign="top"&gt;
+                &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnImageBlock" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ min-width:100%;" width="100%"&gt;
+                  &lt;tbody class="mcnImageBlockOuter"&gt;
+                    &lt;tr&gt;
+                      &lt;td class="mcnImageBlockInner" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding:0px" valign="top"&gt;
+                        &lt;table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+ 100%; min-width:100%;" width="100%"&gt;
+                          &lt;tbody&gt;
+                            &lt;tr&gt;
+                              &lt;td class="mcnImageContent" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-right: 0px;
+ padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;" valign="top"&gt;
+                                    &lt;img align="center" alt="Forgot your password?" class="mcnImage" src="https://static.lingoapp.com/assets/images/email/il-password-reset@2x.png" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; outline: none;
+ text-decoration: none; vertical-align: bottom; max-width:1200px; padding-bottom:
+ 0; display: inline !important; vertical-align: bottom;" width="600"&gt;&lt;/img&gt;
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tbody&gt;
+                        &lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td id="templateBody" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #f7f7ff;
+ border-top: 0; border-bottom: 0; padding-top: 0; padding-bottom: 0" valign="top"&gt;
+                &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnTextBlock" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; min-width:100%;" width="100%"&gt;
+                  &lt;tbody class="mcnTextBlockOuter"&gt;
+                    &lt;tr&gt;
+                      &lt;td class="mcnTextBlockInner" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%" valign="top"&gt;
+                        &lt;table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnTextContentContainer" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+ 100%; min-width:100%;" width="100%"&gt;
+                          &lt;tbody&gt;
+                            &lt;tr&gt;
+                              &lt;td class="mcnTextContent" style='mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word;
+ color: #2a2a2a; font-family: "Asap", Helvetica, sans-serif; font-size: 16px;
+ line-height: 150%; text-align: center; padding-top:9px; padding-right: 18px;
+ padding-bottom: 9px; padding-left: 18px;' valign="top"&gt;
+
+                                &lt;h2 class="null" style='color: #2a2a2a; font-family: "Asap", Helvetica,
+ sans-serif; font-size: 24px; font-style: normal; font-weight: bold; line-height:
+ 125%; letter-spacing: 1px; text-align: center; display: block; margin: 0;
+ padding: 0'&gt;&lt;span style="text-transform:uppercase"&gt;¿Olvidaste tu contraseña?&lt;/span&gt;&lt;/h2&gt;
+
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tbody&gt;
+                        &lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnTextBlock" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace:
+ 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ min-width:100%;" width="100%"&gt;
+                  &lt;tbody class="mcnTextBlockOuter"&gt;
+                    &lt;tr&gt;
+                      &lt;td class="mcnTextBlockInner" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%" valign="top"&gt;
+                        &lt;table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnTextContentContainer" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+ 100%; min-width:100%;" width="100%"&gt;
+                          &lt;tbody&gt;
+                            &lt;tr&gt;
+                              &lt;td class="mcnTextContent" style='mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word;
+ color: #2a2a2a; font-family: "Asap", Helvetica, sans-serif; font-size: 16px;
+ line-height: 150%; text-align: center; padding-top:9px; padding-right: 18px;
+ padding-bottom: 9px; padding-left: 18px;' valign="top"&gt;No te preocupes, ingresa la siguiente clave para que puedas actualizar tu contraseña.
+                                &lt;br&gt;&lt;/br&gt;
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tbody&gt;
+                        &lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnButtonBlock" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ min-width:100%;" width="100%"&gt;
+                  &lt;tbody class="mcnButtonBlockOuter"&gt;
+                    &lt;tr&gt;
+                      &lt;td align="center" class="mcnButtonBlockInner" style="mso-line-height-rule:
+ exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ padding-top:18px; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top"&gt;
+                        &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnButtonBlock" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; min-width:100%;" width="100%"&gt;
+                          &lt;tbody class="mcnButtonBlockOuter"&gt;
+                            &lt;tr&gt;
+                              &lt;td align="center" class="mcnButtonBlockInner" style="mso-line-height-rule:
+ exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ padding-top:0; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top"&gt;
+                                &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ border-collapse: separate !important;border-radius: 48px;background-color:
+ #ffd6ff;"&gt;
+                                  &lt;tbody&gt;
+                                    &lt;tr&gt;
+                                      &lt;td align="center" class="mcnButtonContent" style="mso-line-height-rule:
+ exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+ font-family: 'Asap', Helvetica, sans-serif; font-size: 16px; padding-top:24px;
+ padding-right:48px; padding-bottom:24px; padding-left:48px;" valign="middle"&gt;
+                                        &lt;p class="mcnButton " style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; display: block; color: #ffd6ff;
+ font-weight: normal; text-decoration: none; font-weight: normal;letter-spacing:
+ 1px;line-height: 100%;text-align: center;text-decoration: none;color:
+ #000000; text-transform:uppercase;" target="_blank" title="Review Lingo kit
+ invitation"&gt;{code}&lt;/p&gt;
+                                      &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                  &lt;/tbody&gt;
+                                &lt;/table&gt;
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tbody&gt;
+                        &lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                &lt;table border="0" cellpadding="0" cellspacing="0" class="mcnImageBlock" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; min-width:100%;" width="100%"&gt;
+                  &lt;tbody class="mcnImageBlockOuter"&gt;
+                    &lt;tr&gt;
+                      &lt;td class="mcnImageBlockInner" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding:0px" valign="top"&gt;
+                        &lt;table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="border-collapse: collapse; mso-table-lspace: 0;
+ mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+ 100%; min-width:100%;" width="100%"&gt;
+                          &lt;tbody&gt;
+                            &lt;tr&gt;
+                              &lt;td class="mcnImageContent" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-right: 0px;
+ padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;" valign="top"&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tbody&gt;
+                        &lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td id="templateFooter" style="mso-line-height-rule: exactly;
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #c8b6ff;
+ border-top: 0; border-bottom: 0; padding-top: 8px; padding-bottom: 80px" valign="top"&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;!--[if gte mso 9]&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;![endif]--&gt;
+          &lt;!-- // END TEMPLATE --&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/center&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</value>
+  </data>
+</root>

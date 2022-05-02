@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "FsTGgrmV/ZpNXnU8IbHN1KbgAcp1Szj+QO/0w2g6eKkET4NDD3sVnP/gDzfVcwcnIX24ptHOqZ69Hd9QBjEVDw==",
+  "success": true,
+  "projectFilePath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marco\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Marco\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.17.0\\microsoft.identitymodel.jsonwebtokens.6.17.0.nupkg.sha512",
+    "C:\\Users\\Marco\\.nuget\\packages\\microsoft.identitymodel.logging\\6.17.0\\microsoft.identitymodel.logging.6.17.0.nupkg.sha512",
+    "C:\\Users\\Marco\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.17.0\\microsoft.identitymodel.tokens.6.17.0.nupkg.sha512",
+    "C:\\Users\\Marco\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.17.0\\system.identitymodel.tokens.jwt.6.17.0.nupkg.sha512",
+    "C:\\Users\\Marco\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
