@@ -10,7 +10,7 @@ namespace Coaching.Core.DTO.Request
     public class CourseGetRequest : BaseGetRequest
     {
         [FromQuery(Name = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
     }
 }

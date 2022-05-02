@@ -10,7 +10,7 @@ namespace Coaching.Core.DTO.Request
     public class CertificateGetRequest : BaseGetRequest
     {
         [FromQuery(Name = "name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
     }
 }
