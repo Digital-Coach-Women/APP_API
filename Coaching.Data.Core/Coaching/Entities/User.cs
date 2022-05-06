@@ -8,6 +8,7 @@ namespace Coaching.Data.Core.Coaching.Entities
         public User()
         {
             ChatBot = new HashSet<ChatBot>();
+            ChatSession = new HashSet<ChatSession>();
             ChatUserId1Navigation = new HashSet<Chat>();
             ChatUserId2Navigation = new HashSet<Chat>();
             NotificationUser = new HashSet<NotificationUser>();
@@ -24,9 +25,10 @@ namespace Coaching.Data.Core.Coaching.Entities
         public string? Token { get; set; }
         public string Linkedin { get; set; } = null!;
         public int UserLevel { get; set; }
+        public string? FcmToken { get; set; }
 
-        public virtual ChatSession ChatSession { get; set; } = null!;
         public virtual ICollection<ChatBot> ChatBot { get; set; }
+        public virtual ICollection<ChatSession> ChatSession { get; set; }
         public virtual ICollection<Chat> ChatUserId1Navigation { get; set; }
         public virtual ICollection<Chat> ChatUserId2Navigation { get; set; }
         public virtual ICollection<NotificationUser> NotificationUser { get; set; }

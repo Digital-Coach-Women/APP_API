@@ -15,7 +15,7 @@ namespace Coaching.Core.DTO.Request
         [JsonPropertyName("password")]
         public string Password { get; set; }
 
-        //[JsonPropertyName("fcm_token")]
-        //public string FCMToken { get; set; }
+        [JsonPropertyName("fcm_token")]
+        public string FCMToken { get; set; }
     }
 }

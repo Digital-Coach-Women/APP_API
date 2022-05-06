@@ -36,11 +36,11 @@ namespace Coaching.API.Controllers
                 if (user.Password != encryptPass)
                     return UnauthorizedResult("Correo o contraseña invalido.");
 
-                //if (!string.IsNullOrEmpty(model.FCMToken))
-                //{
-                //    user.Fcmtoken = model.FCMToken;
-                //    storeContext.SaveChanges();
-                //}
+                if (!string.IsNullOrEmpty(model.FCMToken))
+                {
+                    user.FcmToken = model.FCMToken;
+                    context.SaveChanges();
+                }
 
                 var dto = UserResponse.Builder.From(user).Build();
                 dto.Token = TokenHelper.GenerateJwtToken(dto.Id.ToString());

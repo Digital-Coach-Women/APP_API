@@ -125,9 +125,7 @@ namespace Coaching.Data.Core.Coaching
             {
                 entity.ToTable("Chat_Session");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.ChatId).HasColumnName("chat_id");
 
@@ -142,9 +140,15 @@ namespace Coaching.Data.Core.Coaching
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
-                entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.ChatSession)
-                    .HasForeignKey<ChatSession>(d => d.Id)
+                entity.HasOne(d => d.Chat)
+                    .WithMany(p => p.ChatSession)
+                    .HasForeignKey(d => d.ChatId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Chat_Session_Chat");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.ChatSession)
+                    .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Chat_Session_User");
             });
@@ -215,7 +219,7 @@ namespace Coaching.Data.Core.Coaching
                     .HasColumnName("description");
 
                 entity.Property(e => e.Image)
-                    .HasMaxLength(50)
+                    .HasMaxLength(200)
                     .IsUnicode(false)
                     .HasColumnName("image");
 
@@ -323,6 +327,11 @@ namespace Coaching.Data.Core.Coaching
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("email");
+
+                entity.Property(e => e.FcmToken)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("fcm_token");
 
                 entity.Property(e => e.LastName)
                     .HasMaxLength(100)

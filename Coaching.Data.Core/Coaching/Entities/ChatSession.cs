@@ -11,6 +11,7 @@ namespace Coaching.Data.Core.Coaching.Entities
         public DateTime CreatedDate { get; set; }
         public int ChatId { get; set; }
 
-        public virtual User IdNavigation { get; set; } = null!;
+        public virtual Chat Chat { get; set; } = null!;
+        public virtual User User { get; set; } = null!;
     }
 }
