@@ -42,7 +42,7 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareQuery();
+                var query = PrepareQuery().Where(x => x.UserId1 == userId || x.UserId2 == userId).AsQueryable();
 
                 var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
                   pagedEntities => ContactResponse.Builder.From(pagedEntities, userId ?? 0).BuildAll());
@@ -54,8 +54,6 @@ namespace Coaching.API.Controllers
                 return BadRequestResult(e.Message);
             }
         }
-
-
 
         [HttpGet]
         [Route("contacts/{id}/chats")]
@@ -69,7 +67,17 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareQuery().First(x => x.Id == id).ChatSession.OrderByDescending(x => x.CreatedDate).AsQueryable();
+                var chat = PrepareQuery().FirstOrDefault(x => (x.UserId1 == id && x.UserId2 == userId) || (x.UserId2 == id && x.UserId1 == userId));
+                if (chat is null) {
+                    chat = new Chat { 
+                        UserId1 = userId.Value,
+                        UserId2 = id
+                    }; 
+                    context.Chat.Add(chat);
+                    context.SaveChanges();
+                }
+                
+                var query = chat.ChatSession.OrderByDescending(x => x.CreatedDate).AsQueryable();
 
                 var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
                   pagedEntities => ChatResponse.Builder.From(pagedEntities, userId ?? 0).BuildAll());
@@ -94,12 +102,21 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
+                var chat = PrepareQuery().FirstOrDefault(x => (x.UserId1 == id && x.UserId2 == userId) || (x.UserId2 == id && x.UserId1 == userId));
+
+                var document = $"chat-{chat.Id}";
+                var fullName = $"{user.Names} {user.LastName}";
+                var chatSended = await FirebaseHelper.AddChat(document, userId.Value, fullName, model.Message);
+                if (!chatSended)
+                    return BadRequestResult("Ocurrio un error en el servicio");
+
                 var data = new ChatSession
                 {
                     UserId = userId.Value,
                     Message = model.Message,
                     CreatedDate = DateTime.Now,
                     Id = id,
+                    ChatId = chat.Id,
                 };
 
                 context.ChatSession.Add(data);

@@ -10,3 +10,5 @@ D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Helper\obj\Debu
 D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Helper\obj\Debug\net6.0\refint\Coaching.Helper.dll
 D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Helper\obj\Debug\net6.0\Coaching.Helper.pdb
 D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Helper\obj\Debug\net6.0\ref\Coaching.Helper.dll
+D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Helper\obj\Debug\net6.0\Coaching.Helper.Resource.resources
+D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Helper\obj\Debug\net6.0\Coaching.Helper.csproj.GenerateResource.cache

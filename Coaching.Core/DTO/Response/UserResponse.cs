@@ -21,6 +21,8 @@ namespace Coaching.Core.DTO.Response
         public string MotherLastName { get; set; }
         [JsonPropertyName("token")]
         public string Token { get; set; }
+        [JsonPropertyName("uid")]
+        public string Uid { get; set; }
 
         public class Builder
         {

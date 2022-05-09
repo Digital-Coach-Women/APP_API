@@ -30,7 +30,7 @@ namespace Coaching.API.Controllers
             {
                 var users = context.User.Where(x => !string.IsNullOrEmpty(x.FcmToken)).ToList();
                 foreach (var user in users) {
-                    FirebaseFCM.SendPushNotification(user.FcmToken, model.Title, model.Message);
+                    FirebaseFCMHelper.SendPushNotification(user.FcmToken, model.Title, model.Message);
                 }
                 return OkResult("Success","Notificación enviada");
             }
@@ -51,7 +51,7 @@ namespace Coaching.API.Controllers
                 var users = context.User.Where(x => !string.IsNullOrEmpty(x.FcmToken)).ToList();
                 foreach (var user in users)
                 {
-                    FirebaseFCM.SendPushNotification(user.FcmToken, model.Title, model.Message);
+                    FirebaseFCMHelper.SendPushNotification(user.FcmToken, model.Title, model.Message);
                 }
                 return OkResult("Success", "Notificación enviada");
             }
@@ -71,7 +71,7 @@ namespace Coaching.API.Controllers
                 var users = context.User.Where(x => !string.IsNullOrEmpty(x.FcmToken)).ToList();
                 foreach (var user in users)
                 {
-                    FirebaseFCM.SendPushNotification(user.FcmToken, model.Title, model.Message);
+                    FirebaseFCMHelper.SendPushNotification(user.FcmToken, model.Title, model.Message);
                 }
                 return OkResult("Success", "Notificación enviada");
             }

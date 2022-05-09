@@ -12,12 +12,14 @@ namespace Coaching.API.Controllers
         {
             response.StatusCode = StatusCodes.Status404NotFound;
             response.Message = message;
+            response.Error = true;
             return StatusCode(StatusCodes.Status200OK, response);
         }
         public IActionResult UnauthorizedResult(string message)
         {
             response.StatusCode = StatusCodes.Status401Unauthorized;
             response.Message = message;
+            response.Error = true;
             return StatusCode(StatusCodes.Status200OK, response);
         }
 
@@ -25,6 +27,7 @@ namespace Coaching.API.Controllers
         {
             response.StatusCode = StatusCodes.Status204NoContent;
             response.Message = message;
+            response.Error = true;
             return StatusCode(StatusCodes.Status200OK, response);
         }
 
@@ -32,6 +35,7 @@ namespace Coaching.API.Controllers
         {
             response.StatusCode = StatusCodes.Status400BadRequest;
             response.Message = message;
+            response.Error = true;
             return StatusCode(StatusCodes.Status200OK, response);
         }
 

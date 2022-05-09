@@ -24,7 +24,7 @@ namespace Coaching.API.Controllers
         [HttpPost]
         [Route("login")]
         [ProducesResponseType(typeof(DefaultResponse<UserResponse>), StatusCodes.Status200OK)]
-        public IActionResult Login([FromBody] LoginRequest model)
+        public async Task<IActionResult> Login([FromBody] LoginRequest model)
         {
             try
             {
@@ -44,6 +44,8 @@ namespace Coaching.API.Controllers
 
                 var dto = UserResponse.Builder.From(user).Build();
                 dto.Token = TokenHelper.GenerateJwtToken(dto.Id.ToString());
+                dto.Uid = await FirebaseAuthHelper.GetTokenByEmail(model.Email);
+
                 return OkResult("Success", dto);
             }
             catch (Exception e)
@@ -56,15 +58,18 @@ namespace Coaching.API.Controllers
         [HttpPost]
         [Route("register")]
         [ProducesResponseType(typeof(DefaultResponse<UserResponse>), StatusCodes.Status200OK)]
-        public IActionResult Register([FromBody] RegisterRequest model)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest model)
         {
             try
             {
+                var isRegister = await FirebaseAuthHelper.RegisterUser(model.Email, model.Password);
+                if (!isRegister)
+                    return BadRequestResult("Hubo un problema al registrar al usuario.");
+
                 var userExist = context.User
                     .SingleOrDefault(x => x.Email == model.Email);
                 if (userExist != null)
                     return UnauthorizedResult("Correo existente.");
-
 
                 var encryptPass = SecurityHelper.EncryptText(model.Password);
 

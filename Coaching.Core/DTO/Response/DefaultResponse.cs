@@ -15,6 +15,9 @@ namespace Coaching.Core.DTO.Response
         [JsonPropertyName("message")]
         public string Message { get; set; } = string.Empty;
 
+        [JsonPropertyName("error")]
+        public bool Error { get; set; } = false;
+
         [JsonPropertyName("result")]
         public T Result { get; set; }
     }
