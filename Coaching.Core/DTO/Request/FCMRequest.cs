@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Coaching.Core.DTO.Request
 {
-    public class FCMRequest : BaseGetRequest
+    public class FCMRequest
     {
         [JsonPropertyName("title")]
         public string Title { get; set; }
