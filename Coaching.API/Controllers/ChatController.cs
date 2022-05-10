@@ -115,14 +115,13 @@ namespace Coaching.API.Controllers
                     UserId = userId.Value,
                     Message = model.Message,
                     CreatedDate = DateTime.Now,
-                    Id = id,
                     ChatId = chat.Id,
                 };
 
                 context.ChatSession.Add(data);
                 context.SaveChanges();
 
-                return OkResult("message sended", new { });
+                return OkResult("Mensaje enviado", new { });
             }
             catch (Exception e)
             {

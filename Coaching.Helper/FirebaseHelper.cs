@@ -25,11 +25,13 @@ namespace Coaching.Helper
             try
             {
                 DocumentReference docRef = _db.Collection("chats").Document(document);
+                var today = DateTime.Now;
+                today = DateTime.SpecifyKind(today, DateTimeKind.Utc);
                 Dictionary<string, object> service = new Dictionary<string, object>
             {
                 { "userId", userId },
                 { "userName", userName},
-                { "date",  DateTime.Today},
+                { "date",  today},
                 { "message", message},
             };
                 await docRef.SetAsync(service);
