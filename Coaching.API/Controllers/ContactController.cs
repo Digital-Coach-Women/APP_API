@@ -77,7 +77,7 @@ namespace Coaching.API.Controllers
                     context.SaveChanges();
                 }
                 
-                var query = chat.ChatSession.AsQueryable();
+                var query = chat.ChatSession.OrderByDescending(x => x.CreatedDate).AsQueryable();
 
                 var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
                   pagedEntities => ChatResponse.Builder.From(pagedEntities, userId ?? 0).BuildAll());
