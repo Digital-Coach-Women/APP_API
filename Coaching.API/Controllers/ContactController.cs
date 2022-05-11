@@ -11,14 +11,14 @@ using System.Net.Mime;
 namespace Coaching.API.Controllers
 {
     [ApiController]
-    [Route(ConstantHelpers.API_PREFIX + "/chats")]
+    [Route(ConstantHelpers.API_PREFIX + "/contacts")]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
-    public class ChatController : BaseController
+    public class ContactController : BaseController
     {
         private CoachingContext context;
 
-        public ChatController(CoachingContext context)
+        public ContactController(CoachingContext context)
         {
             this.context = context;
         }
@@ -31,7 +31,6 @@ namespace Coaching.API.Controllers
          .AsQueryable();
 
         [HttpGet]
-        [Route("contacts")]
         [ProducesResponseType(typeof(DefaultResponse<ContactResponse>), StatusCodes.Status200OK)]
         public IActionResult Contacts([FromQuery] ContactGetRequest model)
         {
@@ -42,7 +41,7 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareQuery().Where(x => x.UserId1 == userId || x.UserId2 == userId).AsQueryable();
+                var query = PrepareQuery().Where(x => x.UserId1 == userId || x.UserId2 == userId).OrderBy(x => x.LastCommunicateDate).AsQueryable();
 
                 var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
                   pagedEntities => ContactResponse.Builder.From(pagedEntities, userId ?? 0).BuildAll());
@@ -56,7 +55,7 @@ namespace Coaching.API.Controllers
         }
 
         [HttpGet]
-        [Route("contacts/{id}/chats")]
+        [Route("{id}/chats")]
         [ProducesResponseType(typeof(DefaultResponse<ChatResponse>), StatusCodes.Status200OK)]
         public IActionResult Chats(int id, [FromQuery] ChatGetRequest model)
         {
@@ -71,13 +70,14 @@ namespace Coaching.API.Controllers
                 if (chat is null) {
                     chat = new Chat { 
                         UserId1 = userId.Value,
-                        UserId2 = id
+                        UserId2 = id,
+                        LastCommunicateDate = DateTime.Now,
                     }; 
                     context.Chat.Add(chat);
                     context.SaveChanges();
                 }
                 
-                var query = chat.ChatSession.OrderByDescending(x => x.CreatedDate).AsQueryable();
+                var query = chat.ChatSession.AsQueryable();
 
                 var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
                   pagedEntities => ChatResponse.Builder.From(pagedEntities, userId ?? 0).BuildAll());
@@ -91,7 +91,7 @@ namespace Coaching.API.Controllers
         }
 
         [HttpPost]
-        [Route("contacts/{id}/chats")]
+        [Route("{id}/chats")]
         [ProducesResponseType(typeof(DefaultResponse<object>), StatusCodes.Status200OK)]
         public async Task<IActionResult> SendMessage(int id, [FromBody] ChatRequest model)
         {
@@ -117,7 +117,8 @@ namespace Coaching.API.Controllers
                     CreatedDate = DateTime.Now,
                     ChatId = chat.Id,
                 };
-
+                chat.LastCommunicateDate = DateTime.Now;
+                
                 context.ChatSession.Add(data);
                 context.SaveChanges();
 
@@ -130,7 +131,7 @@ namespace Coaching.API.Controllers
         }
 
         [HttpDelete]
-        [Route("contacts/{id}/chats/{chatId}")]
+        [Route("{id}/chats/{chatId}")]
         [ProducesResponseType(typeof(DefaultResponse<object>), StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteMessage(int id, int chatId)
         {
