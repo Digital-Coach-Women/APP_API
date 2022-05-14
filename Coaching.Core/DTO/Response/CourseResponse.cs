@@ -23,6 +23,10 @@ namespace Coaching.Core.DTO.Response
         public string Process { get; set; }
         [JsonPropertyName("order")]
         public int Order { get; set; }
+        [JsonPropertyName("is_basic")]
+        public bool IsBasic { get; set; }
+        [JsonPropertyName("lessons")]
+        public CourseLessonResponse[] Lessons { get; set; }
 
         public class Builder
         {
@@ -57,6 +61,9 @@ namespace Coaching.Core.DTO.Response
                 dto.Process = entity.Process;
                 dto.Order = entity.Order;
                 dto.Video = entity.Video;
+                dto.IsBasic = entity.SpecialityLevel.IsBasic;
+                if (!dto.IsBasic) 
+                    dto.Lessons = CourseLessonResponse.Builder.From(entity.CourseLesson).BuildAll().ToArray();
                 return new Builder(dto);
             }
 

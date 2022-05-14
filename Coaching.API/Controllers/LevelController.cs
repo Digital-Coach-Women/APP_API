@@ -23,8 +23,20 @@ namespace Coaching.API.Controllers
         {
             this.context = context;
         }
+
+        private IQueryable<UserSpecialityLevel> PrepareUserQuery() => context.UserSpecialityLevel
+            .Include(x => x.SpecialityLevel)
+                .ThenInclude(x => x.Speciality)
+            .Include(x => x.SpecialityLevel)
+                .ThenInclude(x => x.Course)
+                    .ThenInclude(x => x.CourseLesson)
+            .Include(x => x.SpecialityLevel)
+                .ThenInclude(x => x.SpecialityLevelCertificate)
+            .AsQueryable();
+
         private IQueryable<SpecialityLevel> PrepareQuery() => context.SpecialityLevel
             .Include(x => x.Course)
+                .ThenInclude(x => x.CourseLesson)
             .Include(x => x.SpecialityLevelCertificate)
             .AsQueryable();
 
@@ -56,6 +68,34 @@ namespace Coaching.API.Controllers
         }
 
         [HttpGet]
+        [Route("matriculated")]
+        [ProducesResponseType(typeof(DefaultResponse<CollectionResponse<LevelResponse>>), StatusCodes.Status200OK)]
+        public IActionResult GetAllMatriculated([FromQuery] LevelGetRequest model)
+        {
+            try
+            {
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var query = PrepareUserQuery().Select(x => x.SpecialityLevel);
+
+                if (!string.IsNullOrEmpty(model.Name))
+                    query = query.Where(x => x.Name.Contains(model.Name));
+
+                var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
+                  pagedEntities => LevelResponse.Builder.From(pagedEntities).BuildAll());
+
+                return OkResult("", dtos);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
+        [HttpGet]
         [Route("{id}")]
         [ProducesResponseType(typeof(DefaultResponse<LevelResponse>), StatusCodes.Status200OK)]
         public IActionResult Get(int id)
@@ -71,6 +111,9 @@ namespace Coaching.API.Controllers
                 if (query is null)
                     return NotFoundResult("Especialidad no encontrado.");
                 var dto = LevelResponse.Builder.From(query).Build();
+
+               
+
                 return OkResult("", dto);
             }
             catch (Exception e)
@@ -147,6 +190,79 @@ namespace Coaching.API.Controllers
                 var query = PrepareQuery().SingleOrDefault(x => x.Id == data.Id);
                 var dto = LevelResponse.Builder.From(query).Build();
                 return OkResult("", dto);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("{id}/matriculated")]
+        [ProducesResponseType(typeof(DefaultResponse<string>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> PostEnrolledLevel(int id)
+        {
+            try
+            {
+                var transaction = default(IDbContextTransaction);
+
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var level = PrepareQuery().FirstOrDefault(x => x.Id == id);
+                if (level is null)
+                    return NotFoundResult("level not found");
+
+                transaction = context.Database.BeginTransaction();
+
+                var userSpecialityLevel = new UserSpecialityLevel
+                {
+                    UserId = userId.Value,
+                    SpecialityLevelId = id,
+                    IsFinish = false
+                };
+
+                context.UserSpecialityLevel.Add(userSpecialityLevel);
+                context.SaveChanges();
+
+                var userCourses = new List<UserCourse>();
+                var lessonCourses =new List<UserCourseLesson>();
+
+                foreach (var course in level.Course.OrderBy(x => x.Order)) {
+                    var userCourse = new UserCourse
+                    {
+                        CourseId = course.Id,
+                        UserSpecialityLevelId = userSpecialityLevel.Id,
+                        IsFinish = false,
+                        Time = 0,
+                        UserId = userId.Value,
+                    };
+                    userCourses.Add(userCourse);
+
+                    if (level.IsBasic == false) {
+                        foreach (var lesson in course.CourseLesson.OrderBy(x => x.Order)) {
+                            var lessonCourse = new UserCourseLesson
+                            {
+                                UserCourseId = userCourse.Id,
+                                IsFinish=false,
+                                Order = 1,
+                                UserId = userId.Value,
+                            };
+                            lessonCourses.Add(lessonCourse);
+                        }
+                    }
+                }
+
+                context.UserCourse.AddRange(userCourses);
+                context.SaveChanges();
+                context.UserCourseLesson.AddRange(lessonCourses);
+                context.SaveChanges();
+
+                transaction.Commit();
+
+                return OkResult("Nivel matriculado correctamente", new {});
             }
             catch (Exception e)
             {

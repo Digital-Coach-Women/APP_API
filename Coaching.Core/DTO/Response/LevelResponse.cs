@@ -21,6 +21,17 @@ namespace Coaching.Core.DTO.Response
         public CourseResponse[] Courses { get; set; }
         [JsonPropertyName("certificates")]
         public CertificateResponse[] Certificates { get; set; }
+        [JsonPropertyName("order")]
+        public int Order { get; set; }
+        [JsonPropertyName("is_matriculated")]
+        public bool IsMatriculated { get; set; }
+
+        [JsonPropertyName("can_matriculated")]
+        public bool CanMatriculated { get; set; }
+        [JsonPropertyName("is_finished")]
+        public bool IsFinished { get; set; }
+        [JsonPropertyName("speciality")]
+        public string Speciality { get; set; }
 
         public class Builder
         {
@@ -52,6 +63,8 @@ namespace Coaching.Core.DTO.Response
                 dto.Id = entity.Id;
                 dto.Name = entity.Name;
                 dto.CupImage = entity.CupImage;
+                dto.Order = entity.Order;
+                dto.Speciality = entity.Speciality.Name;
                 dto.Courses = CourseResponse.Builder.From(entity.Course).BuildAll().ToArray();
                 dto.Certificates = CertificateResponse.Builder.From(entity.SpecialityLevelCertificate).BuildAll().ToArray();
                 return new Builder(dto);

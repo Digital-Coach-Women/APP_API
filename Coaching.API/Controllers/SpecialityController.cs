@@ -24,6 +24,13 @@ namespace Coaching.API.Controllers
             this.context = context;
         }
 
+        private IQueryable<UserSpecialityLevel> PrepareQueryUser() => context.UserSpecialityLevel
+             .Include(x => x.User)
+             .Include(x => x.SpecialityLevel)
+                .ThenInclude(x => x.Speciality)
+             .Include(x => x.UserCourse)
+                 .ThenInclude(x => x.UserCourseLesson);
+
         private IQueryable<Speciality> PrepareQuery() => context.Speciality
             .Include(x => x.SpecialityLevel)
                 .ThenInclude(x => x.Course)
@@ -74,6 +81,46 @@ namespace Coaching.API.Controllers
                 if (query is null)
                     return NotFoundResult("Especialidad no encontrado.");
                 var dto = SpecialityResponse.Builder.From(query).Build();
+
+                var hisotrySpecialityLevel = PrepareQueryUser().Where(x => x.UserId == id && x.SpecialityLevel.SpecialityId == id).ToList();
+                if (hisotrySpecialityLevel.Count() == 0)
+                {
+                    var index = 0;
+                    foreach (var level in dto.Levels.OrderBy(x => x.Order))
+                    {
+                        level.IsMatriculated = false;
+                        level.IsFinished = false;
+                        if (index == 0)
+                            level.CanMatriculated = true;
+                        else
+                            level.CanMatriculated = false;
+                        index++;
+                    }
+                }
+                else
+                {
+                    var nextCanBeMatriculated = true;
+                    foreach (var level in dto.Levels.OrderBy(x => x.Order))
+                    {
+                        var historyLevel = hisotrySpecialityLevel.FirstOrDefault(x => x.SpecialityLevelId == level.Id);
+                        if (historyLevel != null)
+                        {
+                            level.IsFinished = historyLevel.IsFinish;
+                            level.IsMatriculated = true;
+                            if (historyLevel.IsFinish)
+                                nextCanBeMatriculated = true;
+                            else
+                                nextCanBeMatriculated = false;
+                        }
+                        else {
+                            level.IsFinished = false;
+                            level.IsMatriculated = false;
+                            level.CanMatriculated = nextCanBeMatriculated;
+                            nextCanBeMatriculated = false;
+                        }
+                    }
+                }
+
                 return OkResult("", dto);
             }
             catch (Exception e)
@@ -154,6 +201,8 @@ namespace Coaching.API.Controllers
                 return BadRequestResult(e.Message);
             }
         }
+
+       
 
     }
 }

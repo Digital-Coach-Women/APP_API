@@ -17,6 +17,7 @@ namespace Coaching.Data.Core.Coaching.Entities
         public int SpecialityId { get; set; }
         public string CupImage { get; set; } = null!;
         public int Order { get; set; }
+        public bool IsBasic { get; set; }
 
         public virtual Speciality Speciality { get; set; } = null!;
         public virtual ICollection<Course> Course { get; set; }

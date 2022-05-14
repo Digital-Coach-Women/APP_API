@@ -23,6 +23,7 @@ namespace Coaching.Data.Core.Coaching
         public virtual DbSet<ChatBotSession> ChatBotSession { get; set; } = null!;
         public virtual DbSet<ChatSession> ChatSession { get; set; } = null!;
         public virtual DbSet<Course> Course { get; set; } = null!;
+        public virtual DbSet<CourseLesson> CourseLesson { get; set; } = null!;
         public virtual DbSet<NotificationUser> NotificationUser { get; set; } = null!;
         public virtual DbSet<Speciality> Speciality { get; set; } = null!;
         public virtual DbSet<SpecialityLevel> SpecialityLevel { get; set; } = null!;
@@ -30,6 +31,7 @@ namespace Coaching.Data.Core.Coaching
         public virtual DbSet<SuccessStoires> SuccessStoires { get; set; } = null!;
         public virtual DbSet<User> User { get; set; } = null!;
         public virtual DbSet<UserCourse> UserCourse { get; set; } = null!;
+        public virtual DbSet<UserCourseLesson> UserCourseLesson { get; set; } = null!;
         public virtual DbSet<UserSpecialityLevel> UserSpecialityLevel { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -188,6 +190,45 @@ namespace Coaching.Data.Core.Coaching
                     .HasConstraintName("FK_Course_Speciality_Level");
             });
 
+            modelBuilder.Entity<CourseLesson>(entity =>
+            {
+                entity.ToTable("Course_Lesson");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.CourseId).HasColumnName("course_id");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(300)
+                    .IsUnicode(false)
+                    .HasColumnName("description");
+
+                entity.Property(e => e.Icon)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("icon");
+
+                entity.Property(e => e.IsLink).HasColumnName("is_link");
+
+                entity.Property(e => e.Link)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("link");
+
+                entity.Property(e => e.Order).HasColumnName("order");
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("title");
+
+                entity.HasOne(d => d.Course)
+                    .WithMany(p => p.CourseLesson)
+                    .HasForeignKey(d => d.CourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Course_Lesson_Course");
+            });
+
             modelBuilder.Entity<NotificationUser>(entity =>
             {
                 entity.ToTable("Notification_User");
@@ -239,6 +280,8 @@ namespace Coaching.Data.Core.Coaching
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("cup_image");
+
+                entity.Property(e => e.IsBasic).HasColumnName("is_basic");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
@@ -329,7 +372,7 @@ namespace Coaching.Data.Core.Coaching
                     .HasColumnName("email");
 
                 entity.Property(e => e.FcmToken)
-                    .HasMaxLength(50)
+                    .HasMaxLength(200)
                     .IsUnicode(false)
                     .HasColumnName("fcm_token");
 
@@ -374,9 +417,11 @@ namespace Coaching.Data.Core.Coaching
 
                 entity.Property(e => e.CourseId).HasColumnName("course_id");
 
-                entity.Property(e => e.IsFinish).HasColumnName("isFinish");
+                entity.Property(e => e.IsFinish).HasColumnName("is_finish");
 
                 entity.Property(e => e.Time).HasColumnName("time");
+
+                entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.Property(e => e.UserSpecialityLevelId).HasColumnName("user_speciality_level_id");
 
@@ -387,6 +432,27 @@ namespace Coaching.Data.Core.Coaching
                     .HasConstraintName("FK_User_Course_User_Speciality_Level");
             });
 
+            modelBuilder.Entity<UserCourseLesson>(entity =>
+            {
+                entity.ToTable("User_Course_Lesson");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.IsFinish).HasColumnName("is_finish");
+
+                entity.Property(e => e.Order).HasColumnName("order");
+
+                entity.Property(e => e.UserCourseId).HasColumnName("user_course_id");
+
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+
+                entity.HasOne(d => d.UserCourse)
+                    .WithMany(p => p.UserCourseLesson)
+                    .HasForeignKey(d => d.UserCourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_User_Course_Lesson_User_Course");
+            });
+
             modelBuilder.Entity<UserSpecialityLevel>(entity =>
             {
                 entity.ToTable("User_Speciality_Level");
@@ -395,13 +461,13 @@ namespace Coaching.Data.Core.Coaching
 
                 entity.Property(e => e.IsFinish).HasColumnName("is_finish");
 
-                entity.Property(e => e.SpecialityId).HasColumnName("speciality_id");
+                entity.Property(e => e.SpecialityLevelId).HasColumnName("speciality_level_id");
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
-                entity.HasOne(d => d.Speciality)
+                entity.HasOne(d => d.SpecialityLevel)
                     .WithMany(p => p.UserSpecialityLevel)
-                    .HasForeignKey(d => d.SpecialityId)
+                    .HasForeignKey(d => d.SpecialityLevelId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_User_Speciality_Level_Speciality_Level");
 

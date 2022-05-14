@@ -5,6 +5,11 @@ namespace Coaching.Data.Core.Coaching.Entities
 {
     public partial class Course
     {
+        public Course()
+        {
+            CourseLesson = new HashSet<CourseLesson>();
+        }
+
         public int Id { get; set; }
         public string Video { get; set; } = null!;
         public string Title { get; set; } = null!;
@@ -14,5 +19,6 @@ namespace Coaching.Data.Core.Coaching.Entities
         public int Order { get; set; }
 
         public virtual SpecialityLevel SpecialityLevel { get; set; } = null!;
+        public virtual ICollection<CourseLesson> CourseLesson { get; set; }
     }
 }
