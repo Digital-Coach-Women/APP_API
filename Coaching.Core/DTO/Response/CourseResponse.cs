@@ -23,10 +23,16 @@ namespace Coaching.Core.DTO.Response
         public string Process { get; set; }
         [JsonPropertyName("order")]
         public int Order { get; set; }
+        [JsonPropertyName("is_finish")]
+        public bool? IsFinish { get; set; }
+        [JsonPropertyName("time")]
+        public int? Time { get; set; }
         [JsonPropertyName("is_basic")]
         public bool IsBasic { get; set; }
         [JsonPropertyName("lessons")]
         public CourseLessonResponse[] Lessons { get; set; }
+        [JsonPropertyName("lesson_order_save")]
+        public int? LessonOrderSave { get; set; }
 
         public class Builder
         {

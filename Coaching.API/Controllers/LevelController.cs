@@ -122,6 +122,44 @@ namespace Coaching.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("{id}/matriculated")]
+        [ProducesResponseType(typeof(DefaultResponse<LevelResponse>), StatusCodes.Status200OK)]
+        public IActionResult GetMatriculated(int id)
+        {
+            try
+            {
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var query = PrepareUserQuery().SingleOrDefault(x => x.SpecialityLevelId == id);
+                if (query is null)
+                    return NotFoundResult("Nivel de especialidad no encontrado.");
+
+                var level = query.SpecialityLevel;
+                var historiesCourse = query.UserCourse;
+
+                var dto = LevelResponse.Builder.From(level).Build();
+                foreach (var item in dto.Courses) { 
+                    var historyCourse = historiesCourse.First(x => x.CourseId == item.Id);
+                    item.IsFinish = historyCourse.IsFinish;
+                    if (item.IsBasic)
+                        item.Time = historyCourse.Time;
+                    else {
+                        item.LessonOrderSave = historyCourse.UserCourseLesson.First().Order;
+                    }
+                }
+
+                return OkResult("", dto);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType(typeof(DefaultResponse<LevelResponse>), StatusCodes.Status200OK)]
