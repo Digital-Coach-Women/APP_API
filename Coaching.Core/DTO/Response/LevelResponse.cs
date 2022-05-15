@@ -32,6 +32,8 @@ namespace Coaching.Core.DTO.Response
         public bool IsFinished { get; set; }
         [JsonPropertyName("speciality")]
         public string Speciality { get; set; }
+        [JsonPropertyName("image")]
+        public string Image { get; set; }
 
         public class Builder
         {
@@ -65,6 +67,7 @@ namespace Coaching.Core.DTO.Response
                 dto.CupImage = entity.CupImage;
                 dto.Order = entity.Order;
                 dto.Speciality = entity.Speciality.Name;
+                dto.Image = entity.Speciality.Image;
                 dto.Courses = CourseResponse.Builder.From(entity.Course).BuildAll().ToArray();
                 dto.Certificates = CertificateResponse.Builder.From(entity.SpecialityLevelCertificate).BuildAll().ToArray();
                 return new Builder(dto);

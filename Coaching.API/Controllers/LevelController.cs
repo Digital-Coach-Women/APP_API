@@ -79,7 +79,7 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareUserQuery().Select(x => x.SpecialityLevel);
+                var query = PrepareUserQuery().Where(x => x.UserId == userId).Select(x => x.SpecialityLevel);
 
                 if (!string.IsNullOrEmpty(model.Name))
                     query = query.Where(x => x.Name.Contains(model.Name));
