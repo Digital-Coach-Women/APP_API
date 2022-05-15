@@ -82,7 +82,7 @@ namespace Coaching.API.Controllers
                     return NotFoundResult("Especialidad no encontrado.");
                 var dto = SpecialityResponse.Builder.From(query).Build();
 
-                var hisotrySpecialityLevel = PrepareQueryUser().Where(x => x.UserId == id && x.SpecialityLevel.SpecialityId == id).ToList();
+                var hisotrySpecialityLevel = PrepareQueryUser().Where(x => x.UserId == userId.Value && x.SpecialityLevel.SpecialityId == id).ToList();
                 if (hisotrySpecialityLevel.Count() == 0)
                 {
                     var index = 0;
