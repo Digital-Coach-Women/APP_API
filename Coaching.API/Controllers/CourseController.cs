@@ -23,6 +23,11 @@ namespace Coaching.API.Controllers
         {
             this.context = context;
         }
+        
+        private IQueryable<UserCourse> PrepareUserCourseQuery() => context.UserCourse
+            .Include(x => x.UserCourseLesson)
+            .AsQueryable();
+
         private IQueryable<Course> PrepareQuery() => context.Course
             .AsQueryable();
 
@@ -108,6 +113,37 @@ namespace Coaching.API.Controllers
                 var query = PrepareQuery().SingleOrDefault(x => x.Id == id);
                 var dto = CourseResponse.Builder.From(query).Build();
                 return OkResult("", dto);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("{id}/time-video")]
+        [ProducesResponseType(typeof(DefaultResponse<string>), StatusCodes.Status200OK)]
+        public IActionResult SaveTime(int id, [FromBody] CourseVideoRequest model)
+        {
+            try
+            {
+                var transaction = default(IDbContextTransaction);
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var courseHistory = PrepareUserCourseQuery().SingleOrDefault(x => x.CourseId == id && x.UserId == userId);
+                if (courseHistory is null)
+                    return NotFoundResult("historial de curso no encontrado");
+
+                transaction = context.Database.BeginTransaction();
+
+                courseHistory.Time = model.Time;
+                context.SaveChanges();
+                transaction.Commit();
+
+                return OkResult("tiempo guardado", null);
             }
             catch (Exception e)
             {
