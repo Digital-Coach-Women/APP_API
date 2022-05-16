@@ -11,7 +11,7 @@ namespace Coaching.Core.DTO.Request
     {
         [JsonPropertyName("time")]
         public int Time { get; set; }
-        [JsonPropertyName("is_finsh")]
+        [JsonPropertyName("is_finish")]
         public bool IsFinish { get; set; }
     }
 }
