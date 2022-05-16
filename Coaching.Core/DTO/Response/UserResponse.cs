@@ -19,6 +19,8 @@ namespace Coaching.Core.DTO.Response
         public string LastName { get; set; }
         [JsonPropertyName("mother_last_name")]
         public string MotherLastName { get; set; }
+        [JsonPropertyName("email")]
+        public string Email { get; set; }
         [JsonPropertyName("token")]
         public string Token { get; set; }
         [JsonPropertyName("uid")]
@@ -54,6 +56,7 @@ namespace Coaching.Core.DTO.Response
                 dto.Id = entity.Id;
                 dto.Name = entity.Names;
                 dto.LastName = entity.LastName;
+                dto.Email = entity.Email;
                 dto.MotherLastName = entity.MotherLastName;
                 return new Builder(dto);
             }

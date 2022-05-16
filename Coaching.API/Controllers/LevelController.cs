@@ -36,6 +36,9 @@ namespace Coaching.API.Controllers
                 .ThenInclude(x => x.SpecialityLevelCertificate)
             .AsQueryable();
 
+        private IQueryable<UserSpecialityLevel> PreparePartnerQuery() => context.UserSpecialityLevel
+           .Include(x => x.User);
+
         private IQueryable<SpecialityLevel> PrepareQuery() => context.SpecialityLevel
             .Include(x => x.Course)
                 .ThenInclude(x => x.CourseLesson)
@@ -68,6 +71,7 @@ namespace Coaching.API.Controllers
                 return BadRequestResult(e.Message);
             }
         }
+
 
         [HttpGet]
         [Route("matriculated")]
@@ -123,6 +127,33 @@ namespace Coaching.API.Controllers
                 return BadRequestResult(e.Message);
             }
         }
+
+        [HttpGet]
+        [Route("{id}/partners")]
+        [ProducesResponseType(typeof(DefaultResponse<UserResponse>), StatusCodes.Status200OK)]
+        public IActionResult GetAllPartners(int id, [FromQuery] PartnerGetRequest model)
+        {
+            try
+            {
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var query = PrepareUserQuery().Where(x => x.SpecialityLevelId == id).Select(x => x.User);
+                if (query is null)
+                    return NotFoundResult("Especialidad no encontrado.");
+                var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
+                pagedEntities => UserResponse.Builder.From(pagedEntities).BuildAll());
+
+                return OkResult("", dtos);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
 
         [HttpGet]
         [Route("{id}/matriculated")]
