@@ -25,6 +25,8 @@ namespace Coaching.API.Controllers
         }
 
         private IQueryable<UserSpecialityLevel> PrepareUserQuery() => context.UserSpecialityLevel
+            .Include(x => x.UserCourse)
+                .ThenInclude(x => x.UserCourseLesson)
             .Include(x => x.SpecialityLevel)
                 .ThenInclude(x => x.Speciality)
             .Include(x => x.SpecialityLevel)
@@ -134,7 +136,7 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareUserQuery().SingleOrDefault(x => x.SpecialityLevelId == id);
+                var query = PrepareUserQuery().SingleOrDefault(x => x.SpecialityLevelId == id && x.UserId == userId);
                 if (query is null)
                     return NotFoundResult("Nivel de especialidad no encontrado.");
 
