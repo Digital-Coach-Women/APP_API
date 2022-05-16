@@ -140,6 +140,7 @@ namespace Coaching.API.Controllers
                 transaction = context.Database.BeginTransaction();
 
                 courseHistory.Time = model.Time;
+                courseHistory.IsFinish = model.IsFinish;
                 context.SaveChanges();
                 transaction.Commit();
 
