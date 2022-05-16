@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Coaching.Core.DTO.Request
 {
-    public class ChatRequest
+    public class CourseVideoRequest
     {
-        [JsonPropertyName("message")]
-        public string Message { get; set; }
+        [JsonPropertyName("time")]
+        public int Time { get; set; }
     }
 }
