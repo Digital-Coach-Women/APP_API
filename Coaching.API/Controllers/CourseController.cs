@@ -25,6 +25,7 @@ namespace Coaching.API.Controllers
         }
         
         private IQueryable<UserCourse> PrepareUserCourseQuery() => context.UserCourse
+            .Include(x => x.UserSpecialityLevel)
             .Include(x => x.UserCourseLesson)
             .AsQueryable();
 
@@ -141,6 +142,13 @@ namespace Coaching.API.Controllers
 
                 courseHistory.Time = model.Time;
                 courseHistory.IsFinish = model.IsFinish;
+                context.SaveChanges();
+
+                var level = courseHistory.UserSpecialityLevel;
+                var isIncomplete = level.UserCourse.Any(x => x.IsFinish == false);
+                if (isIncomplete == false) { 
+                    level.IsFinish = true;
+                }
                 context.SaveChanges();
                 transaction.Commit();
 
