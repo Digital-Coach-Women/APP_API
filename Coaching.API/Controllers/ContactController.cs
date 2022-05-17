@@ -90,6 +90,40 @@ namespace Coaching.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("{id}/chats-session")]
+        [ProducesResponseType(typeof(DefaultResponse<ChatSessionResponse>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetChatSession(int id)
+        {
+            try
+            {
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var chat = PrepareQuery().FirstOrDefault(x => (x.UserId1 == id && x.UserId2 == userId) || (x.UserId2 == id && x.UserId1 == userId));
+                if (chat is null)
+                {
+                    chat = new Chat
+                    {
+                        UserId1 = userId.Value,
+                        UserId2 = id,
+                        LastCommunicateDate = DateTime.Now,
+                    };
+                    context.Chat.Add(chat);
+                    context.SaveChanges();
+                }
+
+                var dto = ChatSessionResponse.Builder.From(chat, userId.Value).Build();
+                return OkResult("", dto);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
         [HttpPost]
         [Route("{id}/chats")]
         [ProducesResponseType(typeof(DefaultResponse<object>), StatusCodes.Status200OK)]
