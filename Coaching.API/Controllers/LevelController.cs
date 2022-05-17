@@ -85,14 +85,18 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareUserQuery().Where(x => x.UserId == userId).Select(x => x.SpecialityLevel);
+                var query = PrepareUserQuery().Where(x => x.UserId == userId);
+                var levels = query.Select(x => x.SpecialityLevel);
 
                 if (!string.IsNullOrEmpty(model.Name))
-                    query = query.Where(x => x.Name.Contains(model.Name));
+                    levels = levels.Where(x => x.Name.Contains(model.Name));
 
-                var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
+                var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, levels,
                   pagedEntities => LevelResponse.Builder.From(pagedEntities).BuildAll());
-
+                foreach (var item in dtos.Data) { 
+                   var history = query.First(x => x.SpecialityLevelId == item.Id);
+                    item.IsFinished = history.IsFinish;
+                }
                 return OkResult("", dtos);
             }
             catch (Exception e)
