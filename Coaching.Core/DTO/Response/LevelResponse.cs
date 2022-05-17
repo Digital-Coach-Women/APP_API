@@ -34,6 +34,8 @@ namespace Coaching.Core.DTO.Response
         public string Speciality { get; set; }
         [JsonPropertyName("image")]
         public string Image { get; set; }
+        [JsonPropertyName("is_basic")]
+        public bool IsBasic { get; set; }
 
         public class Builder
         {
@@ -68,6 +70,7 @@ namespace Coaching.Core.DTO.Response
                 dto.Order = entity.Order;
                 dto.Speciality = entity.Speciality.Name;
                 dto.Image = entity.Speciality.Image;
+                dto.IsBasic = entity.IsBasic;
                 dto.Courses = CourseResponse.Builder.From(entity.Course).BuildAll().ToArray();
                 dto.Certificates = CertificateResponse.Builder.From(entity.SpecialityLevelCertificate).BuildAll().ToArray();
                 return new Builder(dto);
