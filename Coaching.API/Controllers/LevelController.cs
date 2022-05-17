@@ -26,7 +26,6 @@ namespace Coaching.API.Controllers
 
         private IQueryable<UserSpecialityLevel> PrepareUserQuery() => context.UserSpecialityLevel
             .Include(x => x.UserCourse)
-                .ThenInclude(x => x.UserCourseLesson)
             .Include(x => x.SpecialityLevel)
                 .ThenInclude(x => x.Speciality)
             .Include(x => x.SpecialityLevel)
@@ -185,7 +184,7 @@ namespace Coaching.API.Controllers
                     if (item.IsBasic)
                         item.Time = historyCourse.Time;
                     else {
-                        item.LessonOrderSave = historyCourse.UserCourseLesson.First().Order;
+                        item.OrderLesson = historyCourse.OrderLesson;
                     }
                 }
 
@@ -303,7 +302,6 @@ namespace Coaching.API.Controllers
                 context.SaveChanges();
 
                 var userCourses = new List<UserCourse>();
-                var lessonCourses =new List<UserCourseLesson>();
 
                 foreach (var course in level.Course.OrderBy(x => x.Order)) {
                     var userCourse = new UserCourse
@@ -312,27 +310,13 @@ namespace Coaching.API.Controllers
                         UserSpecialityLevelId = userSpecialityLevel.Id,
                         IsFinish = false,
                         Time = 0,
+                        OrderLesson = 1,
                         UserId = userId.Value,
                     };
                     userCourses.Add(userCourse);
-
-                    if (level.IsBasic == false) {
-                        foreach (var lesson in course.CourseLesson.OrderBy(x => x.Order)) {
-                            var lessonCourse = new UserCourseLesson
-                            {
-                                UserCourseId = userCourse.Id,
-                                IsFinish=false,
-                                Order = 1,
-                                UserId = userId.Value,
-                            };
-                            lessonCourses.Add(lessonCourse);
-                        }
-                    }
                 }
 
                 context.UserCourse.AddRange(userCourses);
-                context.SaveChanges();
-                context.UserCourseLesson.AddRange(lessonCourses);
                 context.SaveChanges();
 
                 transaction.Commit();

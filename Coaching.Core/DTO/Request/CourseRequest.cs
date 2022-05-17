@@ -15,8 +15,6 @@ namespace Coaching.Core.DTO.Request
         public string Title { get; set; }
         [JsonPropertyName("description")]
         public string Description { get; set; }
-        [JsonPropertyName("process")]
-        public string Process { get; set; }
         [JsonPropertyName("order")]
         public int Order { get; set; }
         [JsonPropertyName("speciality_level_id")]

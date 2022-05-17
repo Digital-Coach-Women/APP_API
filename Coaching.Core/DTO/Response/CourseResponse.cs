@@ -19,14 +19,14 @@ namespace Coaching.Core.DTO.Response
         public string Video { get; set; }
         [JsonPropertyName("description")]
         public string Description { get; set; }
-        [JsonPropertyName("process")]
-        public string Process { get; set; }
         [JsonPropertyName("order")]
         public int Order { get; set; }
         [JsonPropertyName("is_finish")]
         public bool? IsFinish { get; set; }
         [JsonPropertyName("time")]
         public int? Time { get; set; }
+        [JsonPropertyName("order_lesson")]
+        public int? OrderLesson { get; set; }
         [JsonPropertyName("is_basic")]
         public bool IsBasic { get; set; }
         [JsonPropertyName("lessons")]
@@ -64,7 +64,6 @@ namespace Coaching.Core.DTO.Response
                 dto.Id = entity.Id;
                 dto.Title = entity.Title;
                 dto.Description = entity.Description;
-                dto.Process = entity.Process;
                 dto.Order = entity.Order;
                 dto.Video = entity.Video;
                 dto.IsBasic = entity.SpecialityLevel.IsBasic;

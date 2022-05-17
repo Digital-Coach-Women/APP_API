@@ -26,7 +26,6 @@ namespace Coaching.API.Controllers
         
         private IQueryable<UserCourse> PrepareUserCourseQuery() => context.UserCourse
             .Include(x => x.UserSpecialityLevel)
-            .Include(x => x.UserCourseLesson)
             .AsQueryable();
 
         private IQueryable<Course> PrepareQuery() => context.Course
@@ -105,7 +104,6 @@ namespace Coaching.API.Controllers
                 course.Video = model.Video;
                 course.Title = model.Title;
                 course.Description = model.Description; 
-                course.Process = model.Process;
                 course.SpecialityLevelId = model.SpecialityLevelId;
                 course.Order = model.Order;
                 context.SaveChanges();
@@ -160,6 +158,46 @@ namespace Coaching.API.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("{id}/lesson")]
+        [ProducesResponseType(typeof(DefaultResponse<string>), StatusCodes.Status200OK)]
+        public IActionResult SaveLesson(int id, [FromBody] CourseLessonRequest model)
+        {
+            try
+            {
+                var transaction = default(IDbContextTransaction);
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var courseHistory = PrepareUserCourseQuery().SingleOrDefault(x => x.CourseId == id && x.UserId == userId);
+                if (courseHistory is null)
+                    return NotFoundResult("historial de curso no encontrado");
+
+                transaction = context.Database.BeginTransaction();
+
+                courseHistory.OrderLesson = model.Order;
+                courseHistory.IsFinish = model.IsFinish;
+                context.SaveChanges();
+
+                var level = courseHistory.UserSpecialityLevel;
+                var isIncomplete = level.UserCourse.Any(x => x.IsFinish == false);
+                if (isIncomplete == false)
+                {
+                    level.IsFinish = true;
+                }
+                context.SaveChanges();
+                transaction.Commit();
+
+                return OkResult("tiempo guardado", null);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
 
         [HttpPost]
         [ProducesResponseType(typeof(DefaultResponse<CourseResponse>), StatusCodes.Status200OK)]
@@ -180,7 +218,6 @@ namespace Coaching.API.Controllers
                 {
                     Title = model.Title,
                     Description = model.Description,
-                    Process = model.Process,
                     SpecialityLevelId = model.SpecialityLevelId,
                     Video = model.Video,
                     Order = model.Order,

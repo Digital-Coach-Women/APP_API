@@ -14,7 +14,6 @@ namespace Coaching.Data.Core.Coaching.Entities
         public string Video { get; set; } = null!;
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
-        public string Process { get; set; } = null!;
         public int SpecialityLevelId { get; set; }
         public int Order { get; set; }
 
