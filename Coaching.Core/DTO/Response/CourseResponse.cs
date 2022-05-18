@@ -14,11 +14,11 @@ namespace Coaching.Core.DTO.Response
         [JsonPropertyName("id")]
         public int Id { get; set; }
         [JsonPropertyName("title")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
         [JsonPropertyName("video")]
-        public string Video { get; set; }
+        public string? Video { get; set; }
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [JsonPropertyName("order")]
         public int Order { get; set; }
         [JsonPropertyName("is_finish")]
@@ -30,9 +30,7 @@ namespace Coaching.Core.DTO.Response
         [JsonPropertyName("is_basic")]
         public bool IsBasic { get; set; }
         [JsonPropertyName("lessons")]
-        public CourseLessonResponse[] Lessons { get; set; }
-        [JsonPropertyName("lesson_order_save")]
-        public int? LessonOrderSave { get; set; }
+        public CourseLessonResponse[]? Lessons { get; set; }
 
         public class Builder
         {

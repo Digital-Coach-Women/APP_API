@@ -26,6 +26,7 @@ namespace Coaching.API.Controllers
         
         private IQueryable<UserCourse> PrepareUserCourseQuery() => context.UserCourse
             .Include(x => x.UserSpecialityLevel)
+                .ThenInclude(x => x.UserCourse)
             .AsQueryable();
 
         private IQueryable<Course> PrepareQuery() => context.Course
@@ -109,7 +110,7 @@ namespace Coaching.API.Controllers
                 context.SaveChanges();
                 transaction.Commit();
 
-                var query = PrepareQuery().SingleOrDefault(x => x.Id == id);
+                var query = PrepareQuery().Single(x => x.Id == id);
                 var dto = CourseResponse.Builder.From(query).Build();
                 return OkResult("", dto);
             }
@@ -121,7 +122,7 @@ namespace Coaching.API.Controllers
 
         [HttpPut]
         [Route("{id}/time-video")]
-        [ProducesResponseType(typeof(DefaultResponse<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DefaultResponse<object>), StatusCodes.Status200OK)]
         public IActionResult SaveTime(int id, [FromBody] CourseVideoRequest model)
         {
             try
@@ -150,7 +151,7 @@ namespace Coaching.API.Controllers
                 context.SaveChanges();
                 transaction.Commit();
 
-                return OkResult("tiempo guardado", null);
+                return OkResult("tiempo guardado", new { });
             }
             catch (Exception e)
             {
@@ -160,7 +161,7 @@ namespace Coaching.API.Controllers
 
         [HttpPut]
         [Route("{id}/lesson")]
-        [ProducesResponseType(typeof(DefaultResponse<string>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DefaultResponse<object>), StatusCodes.Status200OK)]
         public IActionResult SaveLesson(int id, [FromBody] CourseLessonRequest model)
         {
             try
@@ -190,7 +191,7 @@ namespace Coaching.API.Controllers
                 context.SaveChanges();
                 transaction.Commit();
 
-                return OkResult("tiempo guardado", null);
+                return OkResult("tiempo guardado", new { });
             }
             catch (Exception e)
             {
@@ -201,7 +202,7 @@ namespace Coaching.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(DefaultResponse<CourseResponse>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Post([FromBody] CourseRequest model)
+        public IActionResult Post([FromBody] CourseRequest model)
         {
             try
             {
@@ -228,7 +229,7 @@ namespace Coaching.API.Controllers
 
                 transaction.Commit();
 
-                var query = PrepareQuery().SingleOrDefault(x => x.Id == data.Id);
+                var query = PrepareQuery().Single(x => x.Id == data.Id);
                 var dto = CourseResponse.Builder.From(query).Build();
                 return OkResult("", dto);
             }
