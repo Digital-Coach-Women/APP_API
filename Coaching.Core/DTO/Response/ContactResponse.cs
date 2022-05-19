@@ -53,9 +53,16 @@ namespace Coaching.Core.DTO.Response
                 dto.Id = entity.Id;
                 dto.Transmitter = entity.UserId1 == trasmitterId ? UserResponse.Builder.From(entity.UserId1Navigation).Build() : UserResponse.Builder.From(entity.UserId2Navigation).Build();
                 dto.Receiver = entity.UserId1 != trasmitterId ? UserResponse.Builder.From(entity.UserId1Navigation).Build() : UserResponse.Builder.From(entity.UserId2Navigation).Build();
-                var lastChatSession = entity.ChatSession.OrderByDescending(x => x.CreatedDate).First();
-                dto.LastMessage = lastChatSession.Message;
-                dto.LastDate = lastChatSession.CreatedDate.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture); ;
+                var chatsession = entity.ChatSession;
+                if (chatsession.Count > 0)
+                {
+                    var lastChatSession = chatsession.OrderByDescending(x => x.CreatedDate).First();
+                    dto.LastMessage = lastChatSession.Message;
+                    dto.LastDate = lastChatSession.CreatedDate.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture); ;
+                } else {
+                    dto.LastMessage = "";
+                    dto.LastDate = "";
+                }
                 return new Builder(dto);
             }
 
