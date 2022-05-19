@@ -26,7 +26,7 @@ namespace Coaching.Core.DTO.Request
         public string Password { get; set; }
 
         [JsonPropertyName("birthdate")]
-        public DateTime Birthdate { get; set; }
+        public string Birthdate { get; set; }
 
         [JsonPropertyName("linkedin")]
         public string Linkedin { get; set; }

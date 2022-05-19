@@ -5,6 +5,7 @@ using Coaching.Data.Core.Coaching;
 using Coaching.Core.DTO.Response;
 using Coaching.Core.DTO.Request;
 using Coaching.Data.Core.Coaching.Entities;
+using System.Globalization;
 
 namespace Coaching.API.Controllers
 {
@@ -71,6 +72,13 @@ namespace Coaching.API.Controllers
                 if (userExist != null)
                     return UnauthorizedResult("Correo existente.");
 
+                var birthDate = DateTime.ParseExact(model.Birthdate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                var diffYear = DateTime.Now - birthDate;
+                var year = diffYear.TotalDays / 365.25;
+                if (year < 16 && year > 23) {
+                    return BadRequestResult("Debe tener entre 16 a 23 años de edad para registrarse.");
+                }
+
                 var encryptPass = SecurityHelper.EncryptText(model.Password);
 
                 var user = new User
@@ -81,7 +89,7 @@ namespace Coaching.API.Controllers
                     Email = model.Email,
                     Password = encryptPass,
                     Linkedin = model.Linkedin,
-                    Birthdate = model.Birthdate,
+                    Birthdate = birthDate,
                 };
 
                 context.User.Add(user);
