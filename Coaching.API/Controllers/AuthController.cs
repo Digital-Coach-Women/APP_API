@@ -65,7 +65,7 @@ namespace Coaching.API.Controllers
             {
                 var isRegister = await FirebaseAuthHelper.RegisterUser(model.Email, model.Password);
                 if (!isRegister)
-                    return BadRequestResult("Hubo un problema al registrar al usuario.");
+                    return BadRequestResult("Correo existente.");
 
                 var userExist = context.User
                     .SingleOrDefault(x => x.Email == model.Email);
