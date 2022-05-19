@@ -41,7 +41,7 @@ namespace Coaching.API.Controllers
                 if (user is null)
                     return UnauthorizedResult("unathorized");
 
-                var query = PrepareQuery().Where(x => x.UserId1 == userId || x.UserId2 == userId).OrderBy(x => x.LastCommunicateDate).AsQueryable();
+                var query = PrepareQuery().Where(x => x.UserId1 == userId || x.UserId2 == userId).OrderByDescending(x => x.LastCommunicateDate).AsQueryable();
 
                 var dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
                   pagedEntities => ContactResponse.Builder.From(pagedEntities, userId ?? 0).BuildAll());
