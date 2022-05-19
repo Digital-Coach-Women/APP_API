@@ -75,7 +75,7 @@ namespace Coaching.API.Controllers
                 var birthDate = DateTime.ParseExact(model.Birthdate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 var diffYear = DateTime.Now - birthDate;
                 var year = diffYear.TotalDays / 365.25;
-                if (year < 16 && year > 23) {
+                if (year < 16 || year > 23) {
                     return BadRequestResult("Debe tener entre 16 a 23 años de edad para registrarse.");
                 }
 
