@@ -179,7 +179,7 @@ namespace Coaching.API.Controllers
                 transaction = context.Database.BeginTransaction();
 
                 courseHistory.OrderLesson = model.Order;
-                courseHistory.IsFinish = model.IsFinish;
+                courseHistory.IsFinish = courseHistory.IsFinish == true ? true : model.IsFinish;
                 context.SaveChanges();
 
                 var level = courseHistory.UserSpecialityLevel;
