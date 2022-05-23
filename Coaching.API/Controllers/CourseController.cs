@@ -92,7 +92,7 @@ namespace Coaching.API.Controllers
 
         [HttpGet]
         [Route("status")]
-        [ProducesResponseType(typeof(DefaultResponse<CourseResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DefaultResponse<CourseStatusResponse>), StatusCodes.Status200OK)]
         public IActionResult GetStatus()
         {
             try

@@ -13,7 +13,7 @@ namespace Coaching.Core.DTO.Response
     {
         [JsonPropertyName("trophies_wins")]
         public LevelResponse[] TrophiesWins { get; set; }
-        [JsonPropertyName("cups_missing")]
+        [JsonPropertyName("trophies_missing")]
         public LevelResponse[] TrophiesMissing { get; set; }
         
         public class Builder

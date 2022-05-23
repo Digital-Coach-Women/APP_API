@@ -84,7 +84,7 @@ namespace Coaching.API.Controllers
                 var dto = UserResponse.Builder.From(user).Build();
                 dto.Token = TokenHelper.GenerateJwtToken(dto.Id.ToString());
                 
-                return OkResult("Usuario registrado correctamente", null);
+                return OkResult("Informacion actualizada", null);
             }
             catch (Exception e)
             {
