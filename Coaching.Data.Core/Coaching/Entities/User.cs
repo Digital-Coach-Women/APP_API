@@ -26,6 +26,7 @@ namespace Coaching.Data.Core.Coaching.Entities
         public string Linkedin { get; set; } = null!;
         public int UserLevel { get; set; }
         public string? FcmToken { get; set; }
+        public string Level { get; set; } = null!;
 
         public virtual ICollection<ChatBot> ChatBot { get; set; }
         public virtual ICollection<ChatSession> ChatSession { get; set; }

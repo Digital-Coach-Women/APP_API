@@ -277,6 +277,11 @@ namespace Coaching.Data.Core.Coaching
 
                 entity.Property(e => e.IsBasic).HasColumnName("is_basic");
 
+                entity.Property(e => e.Level)
+                    .HasMaxLength(15)
+                    .IsUnicode(false)
+                    .HasColumnName("level");
+
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false)
@@ -375,6 +380,11 @@ namespace Coaching.Data.Core.Coaching
                     .IsUnicode(false)
                     .HasColumnName("last_name");
 
+                entity.Property(e => e.Level)
+                    .HasMaxLength(15)
+                    .IsUnicode(false)
+                    .HasColumnName("level");
+
                 entity.Property(e => e.Linkedin)
                     .HasMaxLength(50)
                     .IsUnicode(false)
@@ -420,6 +430,12 @@ namespace Coaching.Data.Core.Coaching
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.Property(e => e.UserSpecialityLevelId).HasColumnName("user_speciality_level_id");
+
+                entity.HasOne(d => d.Course)
+                    .WithMany(p => p.UserCourse)
+                    .HasForeignKey(d => d.CourseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_User_Course_Course");
 
                 entity.HasOne(d => d.UserSpecialityLevel)
                     .WithMany(p => p.UserCourse)

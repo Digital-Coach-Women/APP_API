@@ -13,6 +13,7 @@ namespace Coaching.Data.Core.Coaching.Entities
         public int UserId { get; set; }
         public int? OrderLesson { get; set; }
 
+        public virtual Course Course { get; set; } = null!;
         public virtual UserSpecialityLevel UserSpecialityLevel { get; set; } = null!;
     }
 }

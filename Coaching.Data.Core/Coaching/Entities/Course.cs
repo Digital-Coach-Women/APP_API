@@ -8,6 +8,7 @@ namespace Coaching.Data.Core.Coaching.Entities
         public Course()
         {
             CourseLesson = new HashSet<CourseLesson>();
+            UserCourse = new HashSet<UserCourse>();
         }
 
         public int Id { get; set; }
@@ -19,5 +20,6 @@ namespace Coaching.Data.Core.Coaching.Entities
 
         public virtual SpecialityLevel SpecialityLevel { get; set; } = null!;
         public virtual ICollection<CourseLesson> CourseLesson { get; set; }
+        public virtual ICollection<UserCourse> UserCourse { get; set; }
     }
 }

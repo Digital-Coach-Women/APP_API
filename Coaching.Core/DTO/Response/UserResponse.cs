@@ -19,12 +19,18 @@ namespace Coaching.Core.DTO.Response
         public string LastName { get; set; }
         [JsonPropertyName("mother_last_name")]
         public string MotherLastName { get; set; }
+        [JsonPropertyName("birthdate")]
+        public long Birthdate { get; set; }
         [JsonPropertyName("email")]
         public string Email { get; set; }
+        [JsonPropertyName("linkedin")]
+        public string Linkedin { get; set; }
         [JsonPropertyName("token")]
         public string Token { get; set; }
         [JsonPropertyName("uid")]
         public string Uid { get; set; }
+        [JsonPropertyName("level")]
+        public string Level { get; set; }
 
         public class Builder
         {
@@ -58,6 +64,9 @@ namespace Coaching.Core.DTO.Response
                 dto.LastName = entity.LastName;
                 dto.Email = entity.Email;
                 dto.MotherLastName = entity.MotherLastName;
+                dto.Level = entity.Level;
+                dto.Birthdate = new DateTimeOffset(entity.Birthdate).ToUnixTimeMilliseconds();
+                dto.Linkedin = entity.Linkedin;
                 return new Builder(dto);
             }
 

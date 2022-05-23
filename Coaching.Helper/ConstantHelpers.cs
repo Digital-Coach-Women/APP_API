@@ -15,6 +15,13 @@ namespace Coaching.Helper
 
         public const string PRODUCT_STATUS_ACTIVATE = "ACT";
 
+        public static class Level { 
+            
+            public const string BASICO = "BASICO";
+            public const string INTERMEDIO = "INTERMEDIO";
+            public const string AVANZADO = "AVANZADO";
+        }
+
         public static string ToSafeString(this object obj, string defStr = "") => obj?.ToString() ?? defStr;
     }
 }
