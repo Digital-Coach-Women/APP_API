@@ -71,6 +71,33 @@ namespace Coaching.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("trophies")]
+        [ProducesResponseType(typeof(DefaultResponse<CollectionResponse<LevelTrophyResponse>>), StatusCodes.Status200OK)]
+        public IActionResult GetAllMatriculated()
+        {
+            try
+            {
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var query = PrepareUserQuery().Where(x => x.UserId == userId);
+
+                var dto = new LevelTrophyResponse();
+                var levelsComplete = query.Where(x => x.IsFinish == true).Select(x => x.SpecialityLevel);
+                dto.TrophiesWins = LevelResponse.Builder.From(levelsComplete).BuildAll().ToArray();
+                var levelsInComplete = query.Where(x => x.IsFinish == false).Select(x => x.SpecialityLevel);
+                dto.TrophiesMissing = LevelResponse.Builder.From(levelsInComplete).BuildAll().ToArray();
+                return OkResult("", dto);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
 
         [HttpGet]
         [Route("matriculated")]

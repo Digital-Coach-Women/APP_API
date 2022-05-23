@@ -25,11 +25,17 @@ namespace Coaching.API.Controllers
         }
         
         private IQueryable<UserCourse> PrepareUserCourseQuery() => context.UserCourse
+            .Include(x => x.Course)
+                .ThenInclude(x => x.SpecialityLevel)
+                    .ThenInclude(x => x.Speciality)
             .Include(x => x.UserSpecialityLevel)
                 .ThenInclude(x => x.UserCourse)
+            .Include(x => x.UserSpecialityLevel)
+                .ThenInclude(x => x.SpecialityLevel)
             .AsQueryable();
 
         private IQueryable<Course> PrepareQuery() => context.Course
+            .Include(x => x.SpecialityLevel)
             .AsQueryable();
 
         [HttpGet]
@@ -75,6 +81,45 @@ namespace Coaching.API.Controllers
                 if (query is null)
                     return NotFoundResult("Especialidad no encontrado.");
                 var dto = CourseResponse.Builder.From(query).Build();
+                return OkResult("", dto);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
+
+
+        [HttpGet]
+        [Route("status")]
+        [ProducesResponseType(typeof(DefaultResponse<CourseResponse>), StatusCodes.Status200OK)]
+        public IActionResult GetStatus()
+        {
+            try
+            {
+                var userId = GetId(Request);
+                var user = context.User.SingleOrDefault(x => x.Id == userId);
+                if (user is null)
+                    return UnauthorizedResult("unathorized");
+
+                var query = PrepareUserCourseQuery().Where(x => x.UserId == userId);
+                //if (query is null)
+                //    return NotFoundResult("Especialidad no encontrado.");
+
+                var dto = new CourseStatusResponse();
+                if (query.Count(x => x.IsFinish == false) == 0)
+                {
+                    dto.PercentComplete = 100;
+                    dto.PercentIncomplete = 0;
+                    dto.Courses = new List<CourseResponse>().ToArray();
+                }
+                else {
+                    var total = query.Count();
+                    dto.PercentIncomplete = (100 * query.Count(x => x.IsFinish == false)) / total;
+                    dto.PercentComplete = (100 * query.Count(x => x.IsFinish == true)) / total;
+                    var coursesIncomplete = query.Where(x => x.IsFinish == false).Select(x => x.Course);
+                    dto.Courses = CourseResponse.Builder.From(coursesIncomplete).BuildAll().ToArray();
+                } 
                 return OkResult("", dto);
             }
             catch (Exception e)
@@ -147,7 +192,15 @@ namespace Coaching.API.Controllers
                 var isIncomplete = level.UserCourse.Any(x => x.IsFinish == false);
                 if (isIncomplete == false) { 
                     level.IsFinish = true;
+                    if (level.SpecialityLevel.Level == ConstantHelpers.Level.INTERMEDIO && user.Level == ConstantHelpers.Level.BASICO) {
+                        user.Level = ConstantHelpers.Level.INTERMEDIO;
+                    }
+                    if (level.SpecialityLevel.Level == ConstantHelpers.Level.AVANZADO && user.Level == ConstantHelpers.Level.INTERMEDIO)
+                    {
+                        user.Level = ConstantHelpers.Level.AVANZADO;
+                    }
                 }
+
                 context.SaveChanges();
                 transaction.Commit();
 
@@ -187,6 +240,14 @@ namespace Coaching.API.Controllers
                 if (isIncomplete == false)
                 {
                     level.IsFinish = true;
+                    if (level.SpecialityLevel.Level == ConstantHelpers.Level.INTERMEDIO && user.Level == ConstantHelpers.Level.BASICO)
+                    {
+                        user.Level = ConstantHelpers.Level.INTERMEDIO;
+                    }
+                    if (level.SpecialityLevel.Level == ConstantHelpers.Level.AVANZADO && user.Level == ConstantHelpers.Level.INTERMEDIO)
+                    {
+                        user.Level = ConstantHelpers.Level.AVANZADO;
+                    }
                 }
                 context.SaveChanges();
                 transaction.Commit();

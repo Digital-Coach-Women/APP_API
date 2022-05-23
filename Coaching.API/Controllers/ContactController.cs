@@ -56,7 +56,7 @@ namespace Coaching.API.Controllers
 
         [HttpGet]
         [Route("{id}/chats")]
-        [ProducesResponseType(typeof(DefaultResponse<ChatResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DefaultResponse<StoriesResponse>), StatusCodes.Status200OK)]
         public IActionResult Chats(int id, [FromQuery] ChatGetRequest model)
         {
             try

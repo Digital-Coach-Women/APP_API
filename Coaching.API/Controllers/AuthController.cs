@@ -90,6 +90,7 @@ namespace Coaching.API.Controllers
                     Password = encryptPass,
                     Linkedin = model.Linkedin,
                     Birthdate = birthDate,
+                    Level = ConstantHelpers.Level.BASICO
                 };
 
                 context.User.Add(user);
