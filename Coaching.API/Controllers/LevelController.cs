@@ -39,10 +39,42 @@ namespace Coaching.API.Controllers
            .Include(x => x.User);
 
         private IQueryable<SpecialityLevel> PrepareQuery() => context.SpecialityLevel
+            .Include(x => x.Speciality) 
             .Include(x => x.Course)
                 .ThenInclude(x => x.CourseLesson)
             .Include(x => x.SpecialityLevelCertificate)
             .AsQueryable();
+
+        [HttpGet]
+        [Route("availables")]
+        [ProducesResponseType(typeof(DefaultResponse<CollectionResponse<LevelResponse>>), StatusCodes.Status200OK)]
+        public IActionResult GetAllAvailable([FromQuery] LevelAvailableGetRequest model)
+        {
+            try
+            {
+                var email = model.Email?.Trim().ToLower() ?? "";
+                var user = context.User.SingleOrDefault(x => x.Email.ToLower().Trim() == email);
+                var dtos = new CollectionResponse<LevelResponse>
+                {
+                    Data = Enumerable.Empty<LevelResponse>(),
+                };
+                if (user is null)
+                    return OkResult("", dtos);
+
+                var levelMatriculated = PrepareUserQuery().Where(x => x.User.Email.ToLower().Trim() == email).Select(x => x.SpecialityLevelId).ToList();
+
+                var query = PrepareQuery().Where(x => !levelMatriculated.Contains(x.Id));
+
+                dtos = ServiceHelper.PaginarColeccion(HttpContext.Request, model.Page, model.Limit, query,
+                  pagedEntities => LevelResponse.Builder.From(pagedEntities).BuildAll());
+
+                return OkResult("", dtos);
+            }
+            catch (Exception e)
+            {
+                return BadRequestResult(e.Message);
+            }
+        }
 
         [HttpGet]
         [ProducesResponseType(typeof(DefaultResponse<CollectionResponse<LevelResponse>>), StatusCodes.Status200OK)]
