@@ -54,6 +54,10 @@ namespace Coaching.Data.Core.Coaching
 
             modelBuilder.Entity<Chat>(entity =>
             {
+                entity.HasIndex(e => e.UserId1, "IX_Chat_user_id_1");
+
+                entity.HasIndex(e => e.UserId2, "IX_Chat_user_id_2");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.LastCommunicateDate)
@@ -81,6 +85,8 @@ namespace Coaching.Data.Core.Coaching
             {
                 entity.ToTable("Chat_Bot");
 
+                entity.HasIndex(e => e.UserId, "IX_Chat_Bot_user_id");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CreatedDate)
@@ -99,6 +105,8 @@ namespace Coaching.Data.Core.Coaching
             modelBuilder.Entity<ChatBotSession>(entity =>
             {
                 entity.ToTable("Chat_Bot_Session");
+
+                entity.HasIndex(e => e.ChatBotId, "IX_Chat_Bot_Session_chat_bot_id");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -125,6 +133,10 @@ namespace Coaching.Data.Core.Coaching
             modelBuilder.Entity<ChatSession>(entity =>
             {
                 entity.ToTable("Chat_Session");
+
+                entity.HasIndex(e => e.ChatId, "IX_Chat_Session_chat_id");
+
+                entity.HasIndex(e => e.UserId, "IX_Chat_Session_user_id");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -156,6 +168,8 @@ namespace Coaching.Data.Core.Coaching
 
             modelBuilder.Entity<Course>(entity =>
             {
+                entity.HasIndex(e => e.SpecialityLevelId, "IX_Course_speciality_level_id");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Description)
@@ -187,6 +201,8 @@ namespace Coaching.Data.Core.Coaching
             modelBuilder.Entity<CourseLesson>(entity =>
             {
                 entity.ToTable("Course_Lesson");
+
+                entity.HasIndex(e => e.CourseId, "IX_Course_Lesson_course_id");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -226,6 +242,8 @@ namespace Coaching.Data.Core.Coaching
             modelBuilder.Entity<NotificationUser>(entity =>
             {
                 entity.ToTable("Notification_User");
+
+                entity.HasIndex(e => e.UserId, "IX_Notification_User_user_id");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -268,6 +286,8 @@ namespace Coaching.Data.Core.Coaching
             {
                 entity.ToTable("Speciality_Level");
 
+                entity.HasIndex(e => e.SpecialityId, "IX_Speciality_Level_speciality_id");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CupImage)
@@ -301,6 +321,8 @@ namespace Coaching.Data.Core.Coaching
             modelBuilder.Entity<SpecialityLevelCertificate>(entity =>
             {
                 entity.ToTable("Speciality_Level_Certificate");
+
+                entity.HasIndex(e => e.SpecialityLevelId, "IX_Speciality_Level_Certificate_speciality_level_id");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -417,6 +439,10 @@ namespace Coaching.Data.Core.Coaching
             {
                 entity.ToTable("User_Course");
 
+                entity.HasIndex(e => e.CourseId, "IX_User_Course_course_id");
+
+                entity.HasIndex(e => e.UserSpecialityLevelId, "IX_User_Course_user_speciality_level_id");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CourseId).HasColumnName("course_id");
@@ -447,6 +473,10 @@ namespace Coaching.Data.Core.Coaching
             modelBuilder.Entity<UserSpecialityLevel>(entity =>
             {
                 entity.ToTable("User_Speciality_Level");
+
+                entity.HasIndex(e => e.SpecialityLevelId, "IX_User_Speciality_Level_speciality_level_id");
+
+                entity.HasIndex(e => e.UserId, "IX_User_Speciality_Level_user_id");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 

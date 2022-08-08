@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj": {}
+    "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj": {}
   },
   "projects": {
-    "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj": {
+    "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj",
+        "projectUniqueName": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj",
         "projectName": "Coaching.Core",
-        "projectPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj",
-        "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
-        "outputPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\obj\\",
+        "projectPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\Coaching.Core.csproj",
+        "packagesPath": "C:\\Users\\MarcoDev\\.nuget\\packages\\",
+        "outputPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MarcoDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj": {
-                "projectPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj"
+              "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj": {
+                "projectPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj"
               },
-              "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj": {
-                "projectPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj"
+              "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj": {
+                "projectPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj"
               }
             }
           }
@@ -71,21 +71,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj": {
+    "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
+        "projectUniqueName": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
         "projectName": "Coaching.Data.Core",
-        "projectPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
-        "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
-        "outputPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\obj\\",
+        "projectPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
+        "packagesPath": "C:\\Users\\MarcoDev\\.nuget\\packages\\",
+        "outputPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MarcoDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -147,21 +147,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj": {
+    "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj",
+        "projectUniqueName": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj",
         "projectName": "Coaching.Helper",
-        "projectPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj",
-        "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
-        "outputPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\obj\\",
+        "projectPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\Coaching.Helper.csproj",
+        "packagesPath": "C:\\Users\\MarcoDev\\.nuget\\packages\\",
+        "outputPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Helper\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MarcoDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -219,7 +219,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

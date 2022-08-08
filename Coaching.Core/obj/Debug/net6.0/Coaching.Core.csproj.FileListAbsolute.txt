@@ -15,3 +15,20 @@ D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\
 D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\refint\Coaching.Core.dll
 D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.pdb
 D:\SCHOOL\UPC 2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\ref\Coaching.Core.dll
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Core.deps.json
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Core.dll
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Core.pdb
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Data.Core.dll
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Helper.dll
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Data.Core.pdb
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\bin\Debug\net6.0\Coaching.Helper.pdb
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.csproj.AssemblyReference.cache
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.AssemblyInfoInputs.cache
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.AssemblyInfo.cs
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.csproj.CoreCompileInputs.cache
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.csproj.CopyComplete
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.dll
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\refint\Coaching.Core.dll
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\Coaching.Core.pdb
+D:\SCHOOL\UPC-2022-1\TDP\PROYECTO_2_ACTUAL\API\Coaching\Coaching.Core\obj\Debug\net6.0\ref\Coaching.Core.dll

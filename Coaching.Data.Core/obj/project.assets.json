@@ -1861,19 +1861,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marco\\.nuget\\packages\\": {}
+    "C:\\Users\\MarcoDev\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
+      "projectUniqueName": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
       "projectName": "Coaching.Data.Core",
-      "projectPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
-      "packagesPath": "C:\\Users\\Marco\\.nuget\\packages\\",
-      "outputPath": "D:\\SCHOOL\\UPC 2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\obj\\",
+      "projectPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\Coaching.Data.Core.csproj",
+      "packagesPath": "C:\\Users\\MarcoDev\\.nuget\\packages\\",
+      "outputPath": "D:\\SCHOOL\\UPC-2022-1\\TDP\\PROYECTO_2_ACTUAL\\API\\Coaching\\Coaching.Data.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Marco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MarcoDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1935,7 +1935,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

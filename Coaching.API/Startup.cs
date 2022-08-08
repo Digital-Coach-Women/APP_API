@@ -30,7 +30,7 @@ namespace Coaching.API
         {
             services.AddControllers();
             services.AddDbContext<CoachingContext>(
-                options => options.UseSqlServer("server=SQL8001.site4now.net;database=db_a86456_coaching;uid=db_a86456_coaching_admin;pwd=P@ssw0rd.123147"));
+                options => options.UseSqlServer("server=dbcoaching.mssql.somee.com;database=dbcoaching;uid=coachingv2_SQLLogin_1;pwd=so96kk9apf"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Coaching.API", Version = "v1" });
